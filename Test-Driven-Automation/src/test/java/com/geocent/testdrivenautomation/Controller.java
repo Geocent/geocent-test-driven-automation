@@ -34,49 +34,59 @@ public class Controller {
 
 	@Test
 	public void testSurvey() throws Exception {
-               //FileInputStream (strFileLocation);
+               //Pull off first line that has headings on it
                fileScanner.nextLine();
-               strFileRow = fileScanner.nextLine();
-               aryDataColumn = strFileRow.split(delims);
-               System.out.println(aryDataColumn[1]);
-            
-		driver.get(baseUrl + "/s/7SV8LSJ");
-		driver.findElement(By.xpath("//span/input")).clear();
-		driver.findElement(By.xpath("//span/input")).sendKeys("7");
-		driver.findElement(By.xpath("//div[3]/input")).click();
-		//driver.findElement(By.xpath("//div[3]/label/img")).click();
-		new Select(driver.findElement(By.xpath("//select"))).selectByVisibleText("No");
-		driver.findElement(By.id("NextButton")).click();
-		driver.findElement(By.xpath("//textarea")).clear();
-		driver.findElement(By.xpath("//textarea")).sendKeys("Fifty");
-		driver.findElement(By.xpath("//span/input")).clear();
-		driver.findElement(By.xpath("//span/input")).sendKeys("5");
-		driver.findElement(By.xpath("//div[3]/div/div[2]/span/input")).clear();
-		driver.findElement(By.xpath("//div[3]/div/div[2]/span/input")).sendKeys("Jimmy");
-		driver.findElement(By.id("NextButton")).click();
-		driver.findElement(By.xpath("//td[2]/input")).clear();
-		driver.findElement(By.xpath("//td[2]/input")).sendKeys("Ken");
-		driver.findElement(By.xpath("//tr[2]/td[2]/input")).clear();
-		driver.findElement(By.xpath("//tr[2]/td[2]/input")).sendKeys("Economi");
-		driver.findElement(By.xpath("//tr[3]/td[2]/input")).clear();
-		driver.findElement(By.xpath("//tr[3]/td[2]/input")).sendKeys("220 cherokee Ln");
-		driver.findElement(By.xpath("//tr[4]/td[2]/input")).clear();
-		driver.findElement(By.xpath("//tr[4]/td[2]/input")).sendKeys("Suite Y");
-		driver.findElement(By.xpath("//tr[5]/td[2]/input")).clear();
-		driver.findElement(By.xpath("//tr[5]/td[2]/input")).sendKeys("Slidell");
-		new Select(driver.findElement(By.xpath("//select"))).selectByVisibleText("LA Louisiana");
-		driver.findElement(By.xpath("//tr[7]/td[2]/input")).clear();
-		driver.findElement(By.xpath("//tr[7]/td[2]/input")).sendKeys("85956");
-		driver.findElement(By.xpath("//tr[8]/td[2]/input")).clear();
-		driver.findElement(By.xpath("//tr[8]/td[2]/input")).sendKeys("USA");
-		driver.findElement(By.xpath("//tr[9]/td[2]/input")).clear();
-		driver.findElement(By.xpath("//tr[9]/td[2]/input")).sendKeys("robby@robby.com");
-		driver.findElement(By.xpath("//tr[10]/td[2]/input")).clear();
-		driver.findElement(By.xpath("//tr[10]/td[2]/input")).sendKeys("2258959866");
-		driver.findElement(By.xpath("//div[2]/input")).click();
-		//driver.findElement(By.xpath("//div[2]/label/img")).click();
-		driver.findElement(By.id("NextButton")).click();
+               
+               //Loop through the data source until it has no more lines
+               while (fileScanner.hasNextLine() ){ 
+                   
+               
+                    strFileRow = fileScanner.nextLine();
+                    aryDataColumn = strFileRow.split(delims);
+               
+               
+                    //First Screen of the Application
+                    driver.get(baseUrl + "/s/7SV8LSJ");
+                    driver.findElement(By.xpath("//span/input")).clear();
+                    driver.findElement(By.xpath("//span/input")).sendKeys(aryDataColumn[0]);
+                    driver.findElement(By.xpath("//div[" + aryDataColumn[2] + "]/input")).click();
+                    new Select(driver.findElement(By.xpath("//select"))).selectByVisibleText(aryDataColumn[3]);
+                    driver.findElement(By.id("NextButton")).click();
+		
+                   //Second Screen of the Application 
+                    driver.findElement(By.xpath("//textarea")).clear();
+                    driver.findElement(By.xpath("//textarea")).sendKeys("Fifty");
+                    driver.findElement(By.xpath("//span/input")).clear();
+                    driver.findElement(By.xpath("//span/input")).sendKeys("5");
+                    driver.findElement(By.xpath("//div[3]/div/div[2]/span/input")).clear();
+                    driver.findElement(By.xpath("//div[3]/div/div[2]/span/input")).sendKeys("Jimmy");
+                    driver.findElement(By.id("NextButton")).click();
+                
+                    //Third Screen of the application
+                    driver.findElement(By.xpath("//td[2]/input")).clear();
+                    driver.findElement(By.xpath("//td[2]/input")).sendKeys("Ken");
+                    driver.findElement(By.xpath("//tr[2]/td[2]/input")).clear();
+                    driver.findElement(By.xpath("//tr[2]/td[2]/input")).sendKeys("Economi");
+                    driver.findElement(By.xpath("//tr[3]/td[2]/input")).clear();
+                    driver.findElement(By.xpath("//tr[3]/td[2]/input")).sendKeys("220 cherokee Ln");
+                    driver.findElement(By.xpath("//tr[4]/td[2]/input")).clear();
+                    driver.findElement(By.xpath("//tr[4]/td[2]/input")).sendKeys("Suite Y");
+                    driver.findElement(By.xpath("//tr[5]/td[2]/input")).clear();
+                    driver.findElement(By.xpath("//tr[5]/td[2]/input")).sendKeys("Slidell");
+                    new Select(driver.findElement(By.xpath("//select"))).selectByVisibleText("LA Louisiana");
+                    driver.findElement(By.xpath("//tr[7]/td[2]/input")).clear();
+                    driver.findElement(By.xpath("//tr[7]/td[2]/input")).sendKeys("85956");
+                    driver.findElement(By.xpath("//tr[8]/td[2]/input")).clear();
+                    driver.findElement(By.xpath("//tr[8]/td[2]/input")).sendKeys("USA");
+                    driver.findElement(By.xpath("//tr[9]/td[2]/input")).clear();
+                    driver.findElement(By.xpath("//tr[9]/td[2]/input")).sendKeys("robby@robby.com");
+                    driver.findElement(By.xpath("//tr[10]/td[2]/input")).clear();
+                    driver.findElement(By.xpath("//tr[10]/td[2]/input")).sendKeys("2258959866");
+                    driver.findElement(By.xpath("//div[2]/input")).click();
+                    //driver.findElement(By.xpath("//div[2]/label/img")).click();
+                    driver.findElement(By.id("NextButton")).click();
 	}
+        }
 
 	@After
 	public void tearDown() throws Exception {
