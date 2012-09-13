@@ -20,6 +20,7 @@ public class Controller {
         public String[] aryDataColumn;
         public Scanner fileScanner;
         public File flInputFile;
+        private String strQ22;
         
 	private StringBuffer verificationErrors = new StringBuffer();
 	@Before
@@ -100,11 +101,7 @@ public class Controller {
                     //Question 7 phone
                     driver.findElement(By.xpath("//tr[10]/td[2]/input")).clear();
                     driver.findElement(By.xpath("//tr[10]/td[2]/input")).sendKeys(aryDataColumn[20]);
-                    //Question 7 Chicken
-                //    if (aryDataColumn[22] = "1") { 
-                    //    aryDataColumn[22] = "";
-                                }
-                    driver.findElement(By.xpath("//div[1]/input")).click();
+
                     driver.findElement(By.id("NextButton")).click();
                     
                     //Start Login Functionality
