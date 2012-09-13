@@ -47,44 +47,67 @@ public class Controller {
                
                     //First Screen of the Application
                     driver.get(baseUrl + "/s/7SV8LSJ");
+                    //Question 1
                     driver.findElement(By.xpath("//span/input")).clear();
                     driver.findElement(By.xpath("//span/input")).sendKeys(aryDataColumn[0]);
+                    //Question 2
                     driver.findElement(By.xpath("//div[" + aryDataColumn[2] + "]/input")).click();
+                    //Question 3
                     new Select(driver.findElement(By.xpath("//select"))).selectByVisibleText(aryDataColumn[3]);
+                    //Next Button
                     driver.findElement(By.id("NextButton")).click();
 		
-                   //Second Screen of the Application 
+                   //Second Sc+reen of the Application 
+                    //Question 4 How Many
                     driver.findElement(By.xpath("//textarea")).clear();
-                    driver.findElement(By.xpath("//textarea")).sendKeys("Fifty");
+                    driver.findElement(By.xpath("//textarea")).sendKeys(aryDataColumn[5]);
+                    //Question 5 Friends
                     driver.findElement(By.xpath("//span/input")).clear();
-                    driver.findElement(By.xpath("//span/input")).sendKeys("5");
+                    driver.findElement(By.xpath("//span/input")).sendKeys(aryDataColumn[7]);
+                    //Question 6 Name
                     driver.findElement(By.xpath("//div[3]/div/div[2]/span/input")).clear();
-                    driver.findElement(By.xpath("//div[3]/div/div[2]/span/input")).sendKeys("Jimmy");
+                    driver.findElement(By.xpath("//div[3]/div/div[2]/span/input")).sendKeys(aryDataColumn[9]);
+                    //Next Button
                     driver.findElement(By.id("NextButton")).click();
                 
                     //Third Screen of the application
+                    //Question 7 Name
                     driver.findElement(By.xpath("//td[2]/input")).clear();
-                    driver.findElement(By.xpath("//td[2]/input")).sendKeys("Ken");
+                    driver.findElement(By.xpath("//td[2]/input")).sendKeys(aryDataColumn[11]);
+                    //Question 7 Company Name
                     driver.findElement(By.xpath("//tr[2]/td[2]/input")).clear();
-                    driver.findElement(By.xpath("//tr[2]/td[2]/input")).sendKeys("Economi");
+                    driver.findElement(By.xpath("//tr[2]/td[2]/input")).sendKeys(aryDataColumn[12]);
+                    //Question 7 Address 
                     driver.findElement(By.xpath("//tr[3]/td[2]/input")).clear();
-                    driver.findElement(By.xpath("//tr[3]/td[2]/input")).sendKeys("220 cherokee Ln");
+                    driver.findElement(By.xpath("//tr[3]/td[2]/input")).sendKeys(aryDataColumn[13]);
+                    //Question 7 Address 2
                     driver.findElement(By.xpath("//tr[4]/td[2]/input")).clear();
-                    driver.findElement(By.xpath("//tr[4]/td[2]/input")).sendKeys("Suite Y");
+                    driver.findElement(By.xpath("//tr[4]/td[2]/input")).sendKeys(aryDataColumn[14]);
+                    //Question 7 City
                     driver.findElement(By.xpath("//tr[5]/td[2]/input")).clear();
-                    driver.findElement(By.xpath("//tr[5]/td[2]/input")).sendKeys("Slidell");
-                    new Select(driver.findElement(By.xpath("//select"))).selectByVisibleText("LA Louisiana");
+                    driver.findElement(By.xpath("//tr[5]/td[2]/input")).sendKeys(aryDataColumn[15]);
+                    //Question 7 State
+                    new Select(driver.findElement(By.xpath("//select"))).selectByVisibleText(aryDataColumn[16]);
+                    //Question 7 Zip
                     driver.findElement(By.xpath("//tr[7]/td[2]/input")).clear();
-                    driver.findElement(By.xpath("//tr[7]/td[2]/input")).sendKeys("85956");
+                    driver.findElement(By.xpath("//tr[7]/td[2]/input")).sendKeys(aryDataColumn[17]);
+                    //Question 7 Country
                     driver.findElement(By.xpath("//tr[8]/td[2]/input")).clear();
-                    driver.findElement(By.xpath("//tr[8]/td[2]/input")).sendKeys("USA");
+                    driver.findElement(By.xpath("//tr[8]/td[2]/input")).sendKeys(aryDataColumn[18]);
+                    //Question 7 Email
                     driver.findElement(By.xpath("//tr[9]/td[2]/input")).clear();
-                    driver.findElement(By.xpath("//tr[9]/td[2]/input")).sendKeys("robby@robby.com");
+                    driver.findElement(By.xpath("//tr[9]/td[2]/input")).sendKeys(aryDataColumn[19]);
+                    //Question 7 phone
                     driver.findElement(By.xpath("//tr[10]/td[2]/input")).clear();
-                    driver.findElement(By.xpath("//tr[10]/td[2]/input")).sendKeys("2258959866");
-                    driver.findElement(By.xpath("//div[2]/input")).click();
-                    //driver.findElement(By.xpath("//div[2]/label/img")).click();
+                    driver.findElement(By.xpath("//tr[10]/td[2]/input")).sendKeys(aryDataColumn[20]);
+                    //Question 7 Chicken
+                //    if (aryDataColumn[22] = "1") { 
+                    //    aryDataColumn[22] = "";
+                                }
+                    driver.findElement(By.xpath("//div[1]/input")).click();
                     driver.findElement(By.id("NextButton")).click();
+                    
+                    //Start Login Functionality
 	}
         }
 
