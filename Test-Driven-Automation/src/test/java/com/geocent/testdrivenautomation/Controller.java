@@ -14,18 +14,20 @@ import java.util.Scanner;
 public class Controller {
 	private WebDriver driver;
 	private String baseUrl;
+        private String delims = "[,]";
         public String strFileRow;
         public String strFileLocation;
-        public String aryDataColumn[];
+        public String[] aryDataColumn;
         public Scanner fileScanner;
         public File flInputFile;
+        
 	private StringBuffer verificationErrors = new StringBuffer();
 	@Before
 	public void setUp() throws Exception {
 		driver = new FirefoxDriver();
 		baseUrl = "http://www.surveymonkey.com/s/7SV8LSJ";
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-                strFileLocation = "C:\\Users\\robby\\Documents\\GitHub\\geocent-test-driven-automation\\Test-Driven-Automation\\src\\test\\java\\com\\geocent\\\testdrivenautomation\\scenario.csv";
+                strFileLocation = "C:\\Users\\robby\\Documents\\GitHub\\geocent-test-driven-automation\\Test-Driven-Automation\\src\\test\\java\\com\\geocent\\testdrivenautomation\\scenario.csv";
                 flInputFile= new File(strFileLocation);
                 fileScanner = new Scanner(flInputFile);
 	}
@@ -35,7 +37,8 @@ public class Controller {
                //FileInputStream (strFileLocation);
                fileScanner.nextLine();
                strFileRow = fileScanner.nextLine();
-               System.out.println(strFileRow);
+               aryDataColumn = strFileRow.split(delims);
+               System.out.println(aryDataColumn[1]);
             
 		driver.get(baseUrl + "/s/7SV8LSJ");
 		driver.findElement(By.xpath("//span/input")).clear();
