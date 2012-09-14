@@ -10,6 +10,7 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.Select;
 import java.util.Scanner;
+import org.junit.Assert;
 
 public class Controller {
 	private WebDriver driver;
@@ -20,15 +21,17 @@ public class Controller {
         public String[] aryDataColumn;
         public Scanner fileScanner;
         public File flInputFile;
-        private String strQ22;
+        private String strTemp;
         
 	private StringBuffer verificationErrors = new StringBuffer();
 	@Before
 	public void setUp() throws Exception {
 		driver = new FirefoxDriver();
-		baseUrl = "http://www.surveymonkey.com/s/7SV8LSJ";
+		baseUrl = "http://www.surveymonkey.com";
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-                strFileLocation = "C:\\Users\\robby\\Documents\\GitHub\\geocent-test-driven-automation\\Test-Driven-Automation\\src\\test\\java\\com\\geocent\\testdrivenautomation\\scenario.csv";
+                File file = new File("");
+                strTemp = file.getAbsolutePath();
+                strFileLocation = strTemp + "\\src\\test\\java\\com\\geocent\\testdrivenautomation\\scenario.csv";
                 flInputFile= new File(strFileLocation);
                 fileScanner = new Scanner(flInputFile);
 	}
@@ -43,22 +46,28 @@ public class Controller {
                    
                
                     strFileRow = fileScanner.nextLine();
+                    //Splits out the line into an array
                     aryDataColumn = strFileRow.split(delims);
                
-               
-                    //First Screen of the Application
+                    //Launch the application
                     driver.get(baseUrl + "/s/7SV8LSJ");
-                    //Question 1
-                    driver.findElement(By.xpath("//span/input")).clear();
-                    driver.findElement(By.xpath("//span/input")).sendKeys(aryDataColumn[0]);
-                    //Question 2
-                    driver.findElement(By.xpath("//div[" + aryDataColumn[2] + "]/input")).click();
-                    //Question 3
-                    new Select(driver.findElement(By.xpath("//select"))).selectByVisibleText(aryDataColumn[3]);
-                    //Next Button
-                    driver.findElement(By.id("NextButton")).click();
-		
-                   //Second Sc+reen of the Application 
+                    
+                    //First Screen of the Application
+                    if (aryDataColumn[0] != null || aryDataColumn[1] != null || aryDataColumn[2] != null || aryDataColumn[3] != null); 
+                            {
+                                //Call Method for first screen of survey
+                                //Question 1
+                                driver.findElement(By.xpath("//span/input")).clear();
+                                driver.findElement(By.xpath("//span/input")).sendKeys(aryDataColumn[0]);
+                                //Question 2
+                                driver.findElement(By.xpath("//div[" + aryDataColumn[2] + "]/input")).click();
+                                //Question 3
+                                new Select(driver.findElement(By.xpath("//select"))).selectByVisibleText(aryDataColumn[3]);
+                                //Next Button
+                                driver.findElement(By.id("NextButton")).click();
+                                
+                            }
+                   //Second Screen of the Application 
                     //Question 4 How Many
                     driver.findElement(By.xpath("//textarea")).clear();
                     driver.findElement(By.xpath("//textarea")).sendKeys(aryDataColumn[5]);
