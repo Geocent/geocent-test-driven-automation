@@ -11,6 +11,8 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.Select;
 import java.util.Scanner;
 import org.junit.Assert;
+import com.thoughtworks.selenium.*;
+
 
 public class Controller {
 	private WebDriver driver;
@@ -22,6 +24,7 @@ public class Controller {
         public Scanner fileScanner;
         public File flInputFile;
         private String strTemp;
+        //private Screen1 strScreen1;
         
 	private StringBuffer verificationErrors = new StringBuffer();
 	@Before
@@ -34,6 +37,7 @@ public class Controller {
                 strFileLocation = strTemp + "\\src\\test\\java\\com\\geocent\\testdrivenautomation\\scenario.csv";
                 flInputFile= new File(strFileLocation);
                 fileScanner = new Scanner(flInputFile);
+               // strScreen1 = new Screen1();
 	}
 
 	@Test
@@ -56,15 +60,21 @@ public class Controller {
                     if (aryDataColumn[0] != null || aryDataColumn[1] != null || aryDataColumn[2] != null || aryDataColumn[3] != null); 
                             {
                                 //Call Method for first screen of survey
+                                Screen1.fillScreenOne(driver, aryDataColumn);
                                 //Question 1
-                                driver.findElement(By.xpath("//span/input")).clear();
-                                driver.findElement(By.xpath("//span/input")).sendKeys(aryDataColumn[0]);
+                            //    driver.findElement(By.xpath("//span/input")).clear();
+                            //    driver.findElement(By.xpath("//span/input")).sendKeys(aryDataColumn[0]);
                                 //Question 2
-                                driver.findElement(By.xpath("//div[" + aryDataColumn[2] + "]/input")).click();
+                            //    driver.findElement(By.xpath("//div[" + aryDataColumn[2] + "]/input")).click();
                                 //Question 3
-                                new Select(driver.findElement(By.xpath("//select"))).selectByVisibleText(aryDataColumn[3]);
+                            //    new Select(driver.findElement(By.xpath("//select"))).selectByVisibleText(aryDataColumn[3]);
                                 //Next Button
-                                driver.findElement(By.id("NextButton")).click();
+                            //    driver.findElement(By.id("NextButton")).click();
+                            //    if (aryDataColumn[1] != null );
+                            //    {
+                            //    driver.findElement(By.xpath("//div[@id='q1']/div")).getText().contains("You must answer this questionto save the survey.");
+                            //    }
+                                                     
                                 
                             }
                    //Second Screen of the Application 
