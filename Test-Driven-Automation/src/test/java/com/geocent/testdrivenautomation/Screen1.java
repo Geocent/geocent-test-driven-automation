@@ -23,7 +23,9 @@ import com.thoughtworks.selenium.*;
 public class Screen1 {
     
     public static void fillScreenOne(WebDriver driver, String[] aryDataColumn){
-                    //Question 1
+                     //Question 1
+                    //The following code will go through the first screen of the application and fill in the information that is provided by the
+                    //CSV file.  It will also validate error text if the CSV has a negative test.
                                 driver.findElement(By.xpath("//span/input")).clear();
                                 driver.findElement(By.xpath("//span/input")).sendKeys(aryDataColumn[0]);
                                 //Question 2
@@ -32,9 +34,14 @@ public class Screen1 {
                                 new Select(driver.findElement(By.xpath("//select"))).selectByVisibleText(aryDataColumn[3]);
                                 //Next Button
                                 driver.findElement(By.id("NextButton")).click();
+                                //Check to see if there is data in the negative test column so we can look for the text below
                                 if (aryDataColumn[1] != null );
                                 {
                                 driver.findElement(By.xpath("//div[@id='q1']/div")).getText().contains("You must answer this questionto save the survey.");
+                                }
+                                if (aryDataColumn[4] != null );
+                                {
+                                driver.findElement(By.xpath("//div[@id='q3']/div")).getText().contains("This question requires an answer");
                                 }
     }
 }
