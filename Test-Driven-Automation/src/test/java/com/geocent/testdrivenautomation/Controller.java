@@ -5,13 +5,14 @@ import java.util.regex.Pattern;
 import java.util.concurrent.TimeUnit;
 import org.junit.*;
 import static org.junit.Assert.*;
-import static org.hamcrest.CoreMatchers.*;
+//import static org.hamcrest.CoreMatchers.*;
 import org.openqa.selenium.*;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.Select;
 import java.util.Scanner;
-import org.junit.Assert;
-import com.thoughtworks.selenium.*;
+//import com.geocent.testdrivenautomation.Globals;
+//import org.junit.Assert;
+//import com.thoughtworks.selenium.*;
 
 
 public class Controller {
@@ -47,8 +48,9 @@ public class Controller {
                
                //Loop through the data source until it has no more lines
                while (fileScanner.hasNextLine() ){ 
-                   
-               
+                   System.out.println("+1");
+                   //Set Bln to false for exit scenario
+                    Globals.blnExitScenario = false;
                     strFileRow = fileScanner.nextLine();
                     //Splits out the line into an array
                     aryDataColumn = strFileRow.split(delims);
@@ -57,73 +59,48 @@ public class Controller {
                     driver.get(baseUrl + "/s/7SV8LSJ");
                     
                     //First Screen of the Application
-                    if (aryDataColumn[0] != null || aryDataColumn[1] != null || aryDataColumn[2] != null || aryDataColumn[3] != null); 
+                    if (!aryDataColumn[0].equals("") || !aryDataColumn[1].equals("") || !aryDataColumn[2].equals("") || !aryDataColumn[3].equals(""))
                             {
                                 //Call Method for first screen of survey
                                 Screen1.fillScreenOne(driver, aryDataColumn);
-                                //Question 1
-                            //    driver.findElement(By.xpath("//span/input")).clear();
-                            //    driver.findElement(By.xpath("//span/input")).sendKeys(aryDataColumn[0]);
-                                //Question 2
-                            //    driver.findElement(By.xpath("//div[" + aryDataColumn[2] + "]/input")).click();
-                                //Question 3
-                            //    new Select(driver.findElement(By.xpath("//select"))).selectByVisibleText(aryDataColumn[3]);
-                                //Next Button
-                            //    driver.findElement(By.id("NextButton")).click();
-                            //    if (aryDataColumn[1] != null );
-                            //    {
-                            //    driver.findElement(By.xpath("//div[@id='q1']/div")).getText().contains("You must answer this questionto save the survey.");
-                            //    }
-                                                     
-                                
                             }
-                   //Second Screen of the Application 
-                    //Question 4 How Many
-                    driver.findElement(By.xpath("//textarea")).clear();
-                    driver.findElement(By.xpath("//textarea")).sendKeys(aryDataColumn[5]);
-                    //Question 5 Friends
-                    driver.findElement(By.xpath("//span/input")).clear();
-                    driver.findElement(By.xpath("//span/input")).sendKeys(aryDataColumn[7]);
-                    //Question 6 Name
-                    driver.findElement(By.xpath("//div[3]/div/div[2]/span/input")).clear();
-                    driver.findElement(By.xpath("//div[3]/div/div[2]/span/input")).sendKeys(aryDataColumn[9]);
-                    //Next Button
-                    driver.findElement(By.id("NextButton")).click();
-                
-                    //Third Screen of the application
-                    //Question 7 Name
-                    driver.findElement(By.xpath("//td[2]/input")).clear();
-                    driver.findElement(By.xpath("//td[2]/input")).sendKeys(aryDataColumn[11]);
-                    //Question 7 Company Name
-                    driver.findElement(By.xpath("//tr[2]/td[2]/input")).clear();
-                    driver.findElement(By.xpath("//tr[2]/td[2]/input")).sendKeys(aryDataColumn[12]);
-                    //Question 7 Address 
-                    driver.findElement(By.xpath("//tr[3]/td[2]/input")).clear();
-                    driver.findElement(By.xpath("//tr[3]/td[2]/input")).sendKeys(aryDataColumn[13]);
-                    //Question 7 Address 2
-                    driver.findElement(By.xpath("//tr[4]/td[2]/input")).clear();
-                    driver.findElement(By.xpath("//tr[4]/td[2]/input")).sendKeys(aryDataColumn[14]);
-                    //Question 7 City
-                    driver.findElement(By.xpath("//tr[5]/td[2]/input")).clear();
-                    driver.findElement(By.xpath("//tr[5]/td[2]/input")).sendKeys(aryDataColumn[15]);
-                    //Question 7 State
-                    new Select(driver.findElement(By.xpath("//select"))).selectByVisibleText(aryDataColumn[16]);
-                    //Question 7 Zip
-                    driver.findElement(By.xpath("//tr[7]/td[2]/input")).clear();
-                    driver.findElement(By.xpath("//tr[7]/td[2]/input")).sendKeys(aryDataColumn[17]);
-                    //Question 7 Country
-                    driver.findElement(By.xpath("//tr[8]/td[2]/input")).clear();
-                    driver.findElement(By.xpath("//tr[8]/td[2]/input")).sendKeys(aryDataColumn[18]);
-                    //Question 7 Email
-                    driver.findElement(By.xpath("//tr[9]/td[2]/input")).clear();
-                    driver.findElement(By.xpath("//tr[9]/td[2]/input")).sendKeys(aryDataColumn[19]);
-                    //Question 7 phone
-                    driver.findElement(By.xpath("//tr[10]/td[2]/input")).clear();
-                    driver.findElement(By.xpath("//tr[10]/td[2]/input")).sendKeys(aryDataColumn[20]);
-
-                    driver.findElement(By.id("NextButton")).click();
-                    
+                    else
+                            {
+                                //set the global to exit if there is no data for the screen
+                                Globals.blnExitScenario = true;
+                            }
+                   //If test has tested negativly then exit scenario
+                   if (!Globals.blnExitScenario)
+                           {
+                            //Second Screen of the Application 
+                        if (!aryDataColumn[5].equals("") || !aryDataColumn[6].equals("") || !aryDataColumn[7].equals("") || !aryDataColumn[8].equals("")|| !aryDataColumn[9].equals("")) 
+                            {
+                                //Call Method for Second screen of survey
+                                Screen2.fillScreenTwo(driver, aryDataColumn);
+                            }
+                        else
+                            {
+                                //set the global to exit if there is no data for the screen
+                                Globals.blnExitScenario = true;
+                            }
+                        //Check to see if there has already been a negative test if so exit scenario
+                            if (!Globals.blnExitScenario)
+                            {
+                                //Third Screen of the application
+                                
+                                    if (!aryDataColumn[5].equals("") || !aryDataColumn[6].equals("") || !aryDataColumn[7].equals("") || !aryDataColumn[8].equals("")|| !aryDataColumn[9].equals("")) 
+                                    {
+                                       //Call Method for Third screen of survey
+                                       Screen3.fillScreenThree(driver, aryDataColumn);
+                                    }
+                                    else
+                                    {
+                                      //set the global to exit if there is no data for the screen
+                                      Globals.blnExitScenario = true;
+                                    }
                     //Start Login Functionality
+                            }
+                           }
 	}
         }
 

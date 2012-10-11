@@ -1,22 +1,18 @@
-Q1-questions too many on survey-R,Negative,Q2-questions normal on survey,Q3-usually take survey?-R,negative,Q4-how many results-R,Q4 Negative,Q5-how many friends,Negative,Q6-name-R,Q6negative,Q7-name-R,Q7-company-R,Q7-address-R,Q7-address2,Q7-city-R,Q7-state-R,Q7-ZIP-R,Country,Q7-email-R,Q7-phone-R,Q7 Negative,Q8-chicken?,username,password,negative,1
-9,,4,No,,Five,,four,,Sophie,,Robby,Dell,123 Yes Street,Suite 2,Covington,LA Louisiana,70433,USA,robby.economides@geocent.com,2252252225,,1,,,,1
-2,,4,IDK,,5,,1,,John,,John Doe,Geocent,111 main st,,New orleans,LA,73000,USA,john.doe@geocent.com,504400-5000,,1,geocent,geocent,,1
-9,,2,Yes,,Twelve,,six,,Does,,Marfk,Lever,586 Jack Ln,,Covington,LA Louisiana,70433,USA,robby.economides@geocent.com,2252252225,,2,geocent,password,y,1
-,,,,,,,,,,,,,,,,,,,,,,,geocent1,geocent,y,1
-,,,,,,,,,,,,,,,,,,,,,,,,geocent,y,1
-,,,,,,,,,,,,,,,,,,,,,,,geocent,,y,1
-2,,,IDK,,5,,2,,John,,John Doe,Geocent,111 main st,,New orleans,LA,73000,,john.doe@geocent.com,504400-5000,,2,geocent,geocent,,1
-2,,3,,y,,,,,,,,,,,,,,,,,,,geocent,geocent,,1
-,Y,2,IDK,y,,,,,,,,,,,,,,,,,,,geocent,geocent,,1
-2,,1,IDK,,,,3,,John,y,,,,,,,,,,,,,geocent,geocent,,1
-2,,2,Yes,,5,,4,,,y,,,,,,,,,,,,,geocent,geocent,,1
-2,,5,IDK,,5,,,,John,,John Doe,Geocent,111 main st,,New orleans,LA,73000,,john.doe@geocent.com,504400-5000,,1,geocent,geocent,,1
-2,,2,No,,1,,5,,John,,,Geocent,111 main st,,New orleans,LA,73000,,john.doe@geocent.com,504400-5000,,2,geocent,geocent,,1
-2,,2,IDK,,2,,6,,John,,John Doe,,111 main st,,New orleans,LA,73000,,john.doe@geocent.com,504400-5000,,1,geocent,geocent,,1
-2,,1,IDK,,3,,7,,John,,John Doe,Geocent,,,New orleans,LA,73000,,john.doe@geocent.com,504400-5000,,2,geocent,geocent,,1
-2,,1,IDK,,4,,8,,John,,John Doe,Geocent,111 main st,,,LA,73000,,john.doe@geocent.com,504400-5000,,3,geocent,geocent,,1
-2,,4,IDK,,5,,9,,John,,John Doe,Geocent,111 main st,,New orleans,,73000,,john.doe@geocent.com,504400-5000,,2,geocent,geocent,,1
-2,,4,IDK,,6,,10,,John,,John Doe,Geocent,111 main st,,New orleans,LA,,,john.doe@geocent.com,504400-5000,,1,geocent,geocent,,1
-2,,3,IDK,,7,,11,,John,,John Doe,Geocent,111 main st,,New orleans,LA,73000,,,504400-5000,,2,geocent,geocent,,1
-2,,3,IDK,,8,,12,,John,,John Doe,Geocent,111 main st,,New orleans,LA,73000,,john.doe@geocent.com,,,3,geocent,geocent,,1
-2,,5,IDK,,9,,13,,John,,John Doe,Geocent,111 main st,,New orleans,LA,73000,,john.doe@geocent.com,504400-5000,,,geocent,geocent,,1
+Q1-questions too many on survey-R,Negative,Q2-questions normal on survey,Q3-usually take survey?-R,negative,Q4-how many results-R,Q4 Negative,Q5-how many friends,Negative,Q6-name-R,Q6negative,Q7-name-R,Q7-company-R,Q7-address-R,Q7-address2,Q7-city-R,Q7-state-R,Q7-ZIP-R,Country,Q7-email-R,Q7-phone-R,Q7 Negative,username,password,negative,1
+9,,4,No,,Five,,four,,Sophie,,Robby,Dell,123 Yes Street,Suite 2,Covington,LA Louisiana,70433,USA,robby.economides@geocent.com,2252252225,,,,,1
+2,,4,IDK,,5,,1,,John,,John Doe,Geocent,111 main st,,New orleans,LA Louisiana,73000,USA,john.doe@geocent.com,5041265321,,geocent,geocent,,1
+9,,2,Yes,,Twelve,,six,,Does,,Marfk,Lever,586 Jack Ln,,Covington,LA Louisiana,70433,USA,robby.economides@geocent.com,2252252225,,geocent,password,y,1
+2,,,IDK,,5,,2,,John,,John Doe,Geocent,111 main st,,New orleans,LA Louisiana,73000,,john.doe@geocent.com,2536589856,,geocent,geocent,,1
+2,,3,,y,,,,,,,,,,,,,,,,,,geocent,geocent,,1
+,y,2,IDK,,,,,,,,,,,,,,,,,,,geocent,geocent,,1
+2,,2,IDK,,,y,3,,,y,,,,,,,,,,,,geocent,geocent,,1
+2,,5,IDK,,5,,,,John,,John Doe,Geocent,111 main st,,New orleans,LA Louisiana,73000,,john.doe@geocent.com,2536589856,,geocent,geocent,,1
+2,,2,No,,1,,5,,John,,,Geocent,111 main st,,New orleans,LA Louisiana,73000,,john.doe@geocent.com,2536589856,y,geocent,geocent,,1
+2,,2,IDK,,2,,6,,John,,John Doe,,111 main st,,New orleans,LA Louisiana,73000,,john.doe@geocent.com,2536589856,,geocent,geocent,,1
+2,,3,IDK,,3,,7,,John,,John Doe,Geocent,,,New orleans,LA Louisiana,73000,,john.doe@geocent.com,2536589856,y,geocent,geocent,,1
+2,,4,IDK,,4,,8,,John,,John Doe,Geocent,111 main st,,,LA Louisiana,73000,,john.doe@geocent.com,2536589856,,geocent,geocent,,1
+2,,4,IDK,,5,,9,,John,,John Doe,Geocent,111 main st,,New orleans,LA Louisiana,73000,,john.doe@geocent.com,2536589856,,geocent,geocent,,1
+2,,4,IDK,,6,,10,,John,,John Doe,Geocent,111 main st,,New orleans,LA Louisiana,,,john.doe@geocent.com,2536589856,y,geocent,geocent,,1
+2,,3,IDK,,7,,11,,John,,John Doe,Geocent,111 main st,,New orleans,LA Louisiana,73000,,,2536589856,,geocent,geocent,,1
+2,,3,IDK,,8,,12,,John,,John Doe,Geocent,111 main st,,New orleans,LA Louisiana,73000,,john.doe@geocent.com,2536589856,,geocent,geocent,,1
+2,,5,IDK,,9,,13,,John,,John Doe,Geocent,111 main st,,New orleans,LA Louisiana,73000,,john.doe@geocent.com,,y,geocent,geocent,,1

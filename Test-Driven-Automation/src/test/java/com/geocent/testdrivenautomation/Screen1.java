@@ -29,19 +29,24 @@ public class Screen1 {
                                 driver.findElement(By.xpath("//span/input")).clear();
                                 driver.findElement(By.xpath("//span/input")).sendKeys(aryDataColumn[0]);
                                 //Question 2
-                                driver.findElement(By.xpath("//div[" + aryDataColumn[2] + "]/input")).click();
+                                if (!aryDataColumn[2].equals(""))
+                                {
+                                    driver.findElement(By.xpath("//div[" + aryDataColumn[2] + "]/input")).click();
+                                }
                                 //Question 3
                                 new Select(driver.findElement(By.xpath("//select"))).selectByVisibleText(aryDataColumn[3]);
                                 //Next Button
                                 driver.findElement(By.id("NextButton")).click();
                                 //Check to see if there is data in the negative test column so we can look for the text below
-                                if (aryDataColumn[1] != null );
+                                if (!aryDataColumn[1].equals(""))
                                 {
                                 driver.findElement(By.xpath("//div[@id='q1']/div")).getText().contains("You must answer this questionto save the survey.");
+                                Globals.blnExitScenario = true;
                                 }
-                                if (aryDataColumn[4] != null );
+                                if (!aryDataColumn[4].equals("") )
                                 {
                                 driver.findElement(By.xpath("//div[@id='q3']/div")).getText().contains("This question requires an answer");
+                                Globals.blnExitScenario = true;
                                 }
     }
 }
